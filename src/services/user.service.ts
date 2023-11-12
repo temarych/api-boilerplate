@@ -12,6 +12,13 @@ class UserService {
     return await prisma.user.create({ data });
   }
 
+  public async updateUserById(id: string, data: Partial<Omit<User, 'id'>>) {
+    return await prisma.user.update({
+      where: { id },
+      data,
+    });
+  }
+
   public async deleteUser(id: string) {
     return await prisma.user.delete({
       where: { id },
