@@ -1,19 +1,22 @@
-import express         from 'express';
-import dotenv          from 'dotenv';
-import cors            from 'cors';
-import bodyParser      from 'body-parser';
-import { handleError } from '@middleware/error.middleware';
-import { authRoute }   from '@routes/auth.route';
+import express          from 'express';
+import dotenv           from 'dotenv';
+import cors             from 'cors';
+import { PrismaClient } from '@prisma/client';
+import { handleError }  from '@middleware/error.middleware';
+import { authRoute }    from '@routes/auth.route';
+import { selfRoute }    from '@routes/self.route';
 
 dotenv.config();
 
-export const app  = express();
-export const port = process.env.PORT as string;
+export const app    = express();
+export const port   = process.env.PORT as string;
+export const prisma = new PrismaClient();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use('/auth', authRoute);
+app.use('/self', selfRoute);
 
 app.use(handleError);
 

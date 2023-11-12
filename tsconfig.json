@@ -4,15 +4,18 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
-    "baseUrl": "./src",
     "outDir": "./dist",
     "paths": {
-      "@controllers/*": ["controllers/*"],
-      "@routes/*": ["routes/*"],
-      "@middleware/*": ["middleware/*"]
+      "@controllers/*": ["./src/controllers/*"],
+      "@routes/*"     : ["./src/routes/*"],
+      "@middleware/*" : ["./src/middleware/*"],
+      "@schemas/*"    : ["./src/schemas/*"],
+      "@utils/*"      : ["./src/utils/*"],
+      "@services/*"   : ["./src/services/*"],
+      "@dtos/*"       : ["./src/dtos/*"],
+      "@/*"           : ["./src/*"]
     }
   }
 }
