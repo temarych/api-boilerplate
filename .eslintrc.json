@@ -23,6 +23,7 @@
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "eol-last": ["error", "always"]
+    "eol-last": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"]
   }
 }
