@@ -9,7 +9,7 @@ import { selfRoute }    from '@routes/self.route';
 dotenv.config();
 
 export const app    = express();
-export const port   = process.env.PORT as string;
+export const port   = process.env.PORT ?? 3000;
 export const prisma = new PrismaClient();
 
 app.use(cors());
